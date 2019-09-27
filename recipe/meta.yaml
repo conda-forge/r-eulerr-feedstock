@@ -1,4 +1,4 @@
-{% set version = "6.0.0" %}
+{% set version = '6.0.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -23,10 +23,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -54,45 +54,40 @@ test:
     - "\"%R%\" -e \"library('eulerr')\""  # [win]
 
 about:
-  home: https://github.com/jolars/eulerr
+  home: https://github.com/jolars/eulerr, https://jolars.github.io/eulerr/
   license: GPL-3
   summary: Generate area-proportional Euler diagrams using numerical optimization. An Euler diagram
     is a generalization of a Venn diagram, relaxing the criterion that all interactions
     need to be represented. Diagrams may be fit with ellipses and circles via a wide
     range of inputs and can be visualized in numerous ways.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
 
 # Package: eulerr
 # Title: Area-Proportional Euler and Venn Diagrams with Ellipses
-# Version: 5.0.0
-# Authors@R: c(person("Johan", "Larsson", email = "mail@larssonjohan.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-4029-5945")), person("A. Jonathan R.", "Godfrey", role = "ctb"), person("Peter", "Gustafsson", role = "ctb"), person("David H.", "Eberly", role = "ctb", comment = "geometric algorithms"), person("Emanuel", "Huber", role = "ctb", comment = "root solver code"))
+# Version: 6.0.0
+# Authors@R: c(person("Johan", "Larsson", email = "mail@larssonjohan.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-4029-5945")), person("A. Jonathan R.", "Godfrey", role = "ctb"), person("Peter", "Gustafsson", role = "ctb"), person("David H.", "Eberly", role = "ctb", comment = "geometric algorithms"), person("Emanuel", "Huber", role = "ctb", comment = "root solver code"), person("Kamil", "Slowikowski", role = c("ctb", "cph"), comment = "modified code from ggrepel"))
 # Description: Generate area-proportional Euler diagrams using numerical optimization. An Euler diagram is a generalization of a Venn diagram, relaxing the criterion that all interactions need to be represented. Diagrams may be fit with ellipses and circles via a wide range of inputs and can be visualized in numerous ways.
 # Depends: R (>= 3.3.0)
 # Imports: GenSA, graphics, grDevices, grid, polyclip, polylabelr, Rcpp, stats, utils
-# Suggests: covr, knitr, lattice, pBrackets, RConics, testthat, spelling, rmarkdown
+# Suggests: covr, knitr, lattice, pBrackets, RConics, rmarkdown, testthat, spelling
 # LinkingTo: Rcpp (>= 0.12.12), RcppArmadillo (>= 0.7.600.1.0)
 # License: GPL-3
 # Encoding: UTF-8
 # LazyData: true
 # VignetteBuilder: knitr
-# URL: https://github.com/jolars/eulerr
+# URL: https://github.com/jolars/eulerr, https://jolars.github.io/eulerr/
 # BugReports: https://github.com/jolars/eulerr/issues
-# RoxygenNote: 6.1.0
+# RoxygenNote: 6.1.1
 # Language: en-US
 # NeedsCompilation: yes
-# Packaged: 2018-11-05 18:33:55 UTC; jolars
-# Author: Johan Larsson [aut, cre] (<https://orcid.org/0000-0002-4029-5945>), A. Jonathan R. Godfrey [ctb], Peter Gustafsson [ctb], David H. Eberly [ctb] (geometric algorithms), Emanuel Huber [ctb] (root solver code)
+# Packaged: 2019-09-27 20:50:17 UTC; johan
+# Author: Johan Larsson [aut, cre] (<https://orcid.org/0000-0002-4029-5945>), A. Jonathan R. Godfrey [ctb], Peter Gustafsson [ctb], David H. Eberly [ctb] (geometric algorithms), Emanuel Huber [ctb] (root solver code), Kamil Slowikowski [ctb, cph] (modified code from ggrepel)
 # Maintainer: Johan Larsson <mail@larssonjohan.com>
 # Repository: CRAN
-# Date/Publication: 2018-11-05 19:10:02 UTC
+# Date/Publication: 2019-09-27 21:10:02 UTC
