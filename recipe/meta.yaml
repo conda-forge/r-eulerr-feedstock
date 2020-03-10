@@ -1,4 +1,4 @@
-{% set version = "6.0.2" %}
+{% set version = "6.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/eulerr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/eulerr/eulerr_{{ version }}.tar.gz
-  sha256: 0609e183899fec580cdee96adcc116f7c6f35e531b85210a7dbf552685078a32
+  sha256: 92015e12af98b1e3bc765a28d13f75f6896930c65691d9210d7924217700fee4
 
 build:
   # r-gensa is not available for Windows
