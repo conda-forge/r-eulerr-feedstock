@@ -66,6 +66,8 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
+    - mxr-conda
+    - bubblyorca
 
 # Package: eulerr
 # Title: Area-Proportional Euler and Venn Diagrams with Ellipses
