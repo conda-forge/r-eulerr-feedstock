@@ -14,7 +14,6 @@ source:
 
 build:
   # r-gensa is not available for Windows
-  skip: true  # [win]
   merge_build_host: true  # [win]
   number: 0
   rpaths:
@@ -66,6 +65,8 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
+    - mxr-conda
+    - bubblyorca
 
 # Package: eulerr
 # Title: Area-Proportional Euler and Venn Diagrams with Ellipses
