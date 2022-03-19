@@ -13,8 +13,6 @@ source:
   sha256: 294c38b4b39e3ed25f4fb4d569d98c3b9fa3507fc220779047a0e11486b88d52
 
 build:
-  # r-gensa is not available for Windows
-  skip: true  # [win]
   merge_build_host: true  # [win]
   number: 0
   rpaths:
@@ -66,6 +64,8 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
+    - mxr-conda
+    - bubblyorca
 
 # Package: eulerr
 # Title: Area-Proportional Euler and Venn Diagrams with Ellipses
